@@ -1,0 +1,3 @@
+un fisier .h spune compilatorului denumirea functiilor si tipurile de date din acestea
+un fisier .lib contine codul pentru un fisier .exe
+un fisier .dll contine codul pentru un fisier .exe, dar spre deosebire de .lib, este proiectat pentru a fi folosit de mai multe executabile diferite care au nevoie de acel cod
