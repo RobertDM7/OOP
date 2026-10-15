@@ -1,23 +1,21 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 #define DEBUG
 
-void Debug(string mesaj) {
+void Debug(char* mesaj) {
 #ifdef DEBUG
-    cout << "DEBUG: " << mesaj << "\n";
+    printf("DEBUG: %s\n", mesaj);
 #endif
 }
 
 int main()
 {
     double gradeCelsius;
-    cin >> gradeCelsius;
+    scanf("%lf", &gradeCelsius);
 
     Debug("Afisam cate grade Celsius avem");
     
-    cout << gradeCelsius << "\n";
+    printf("%.5lf\n", gradeCelsius);
 
     Debug("Am ajuns la finalul programului");
     return 0;

@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <stdio.h>
 #define USE_HEADER1 1
 
 #if USE_HEADER1
