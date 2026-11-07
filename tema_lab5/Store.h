@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <string>
 #include "Shoe.h"
 #include "Toy.h"
@@ -103,28 +104,13 @@ class Store
 
     void showProducts()
     {
-        sort(products.begin(), products.end(), [](Product a, Product b)
-    {
-        if (a.getName() == b.getName())
-            return a.getPrice() > b.getPrice();
-            else
-            return a.getName() > b.getName();
-    });
-        for (auto product : products)
+            sort(products.begin(), products.end(), [](Product a, Product b)
         {
-            cout << "Product name: " << product.getName() << ", product price: " << product.getPrice() << "\n";
-        }
-    }
-
-    void showProducts()
-    {
-        sort(products.begin(), products.end(), [](Product a, Product b)
-    {
-        if (a.getName() == b.getName())
-            return a.getPrice() > b.getPrice();
-            else
-            return a.getName() > b.getName();
-    });
+            if (a.getName() == b.getName())
+                return a.getPrice() < b.getPrice();
+                else
+                return a.getName() < b.getName();
+        });
         for (auto product : products)
         {
             cout << "Product name: " << product.getName() << ", product price: " << product.getPrice() << "\n";
