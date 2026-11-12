@@ -9,29 +9,18 @@ using namespace std;
 class Group::Student
 {
 public:
-    Student(int id, const string &firstName, const string &lastName, double average) : id(id), firstName(firstName), lastName(lastName), average(average) {}
+    Student(int id, const string &firstName, const string &lastName, double average);
 
-    int getId() const
-    {
-        return id;
-    }
-    const string &getFirstName() const
-    {
-        return firstName;
-    }
-    const string &getLastName() const
-    {
-        return lastName;
-    }
-    double getAverage() const
-    {
-        return average;
-    }
+    int getId() const;
+    const string &getFirstName() const;
 
-    void display() const
-    {
-        cout << id << " " << firstName << " " << lastName << " " << average << "\n";
-    }
+    const string &getLastName() const;
+
+    double getAverage() const;
+
+
+    void display() const;
+
 
 private:
     int id;

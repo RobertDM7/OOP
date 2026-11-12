@@ -5,26 +5,15 @@ using namespace std;
 
 class Product
 {
-    public:
+public:
+    Product(string name = "", int price = 0);
+    virtual ~Product() = default;
 
-    Product(string name = "", int price = 0)
-    {
-        this -> name = name;
-        this -> price = price;
-    };
+    string getName();
+    int getPrice();
+    virtual void display();
 
-    string getName()
-    {
-        return name;
-    }
-
-    int getPrice()
-    {
-        return price;
-    }
-
-    protected:
-
+protected:
     string name;
     int price;
 };

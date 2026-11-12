@@ -6,15 +6,12 @@ using namespace std;
 
 class Shoe : public Product
 {
-    public:
+public:
+    Shoe(string name, int price, int size);
 
-    Shoe(string name, int price, int size) : Product(name, price), size(size){}
+    int getSize();
+    void display() override;
 
-    int getSize()
-    {
-        return size;
-    }
-
-    private:
+private:
     int size;
 };

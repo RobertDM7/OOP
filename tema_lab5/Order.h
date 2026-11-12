@@ -9,49 +9,20 @@ using namespace std;
 
 class Order
 {
-    public:
-    Order(int id) : id(id) {}
+public:
+    Order(int id);
 
-    void addShoeToOrder(Shoe shoe)
-    {
-        shoes.push_back(shoe);
-    }
+    void addShoeToOrder(Shoe shoe);
+    void addToyToOrder(Toy toy);
 
-    void addToyToOrder(Toy toy)
-    {
-        toys.push_back(toy);
-    }
+    int getId() const;
+    vector<Shoe> getShoes();
+    vector<Toy> getToys();
 
-    int getId() const
-    {
-        return id;
-    }
+    int getTotalValue();
 
-    vector<Shoe> getShoes()
-    { 
-        return shoes; 
-    }
-    vector<Toy> getToys()
-    { 
-        return toys;
-    }
-
-    int getTotalValue()
-    {
-        int total = 0;
-        for (auto shoe : shoes)
-        {
-            total += shoe.getPrice();
-        }
-        for (auto toy : toys)
-        {
-            total += toy.getPrice();
-        }
-        return total;
-    }
-
-    private:
-        int id;
-        vector<Shoe> shoes;
-        vector<Toy> toys;
+private:
+    int id;
+    vector<Shoe> shoes;
+    vector<Toy> toys;
 };

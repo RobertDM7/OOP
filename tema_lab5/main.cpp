@@ -21,8 +21,24 @@ int main()
     vector<Toy> extraToys = { Toy("Monopoly", 120, 8), Toy("Rubik Cube", 50, 10)};
     myStore.addToys(extraToys);
 
-    myStore.findProduct("Adidas");
-    myStore.findProduct("ProdusInexistent");
+    for (string name : {"Adidas", "Lego", "ProdusInexistent"})
+    {
+        Product* p = myStore.findProduct(name);
+        if (p == nullptr)
+        {
+            cout << name << ": we didn't find the product\n";
+        }
+        else if (Shoe* s = dynamic_cast<Shoe*>(p))
+        {
+            cout << "Found shoe -> ";
+            s->display();
+        }
+        else if (Toy* t = dynamic_cast<Toy*>(p))
+        {
+            cout << "Found toy -> ";
+            t->display();
+        }
+    }
     cout << "\n";
 
     myStore.showProducts();

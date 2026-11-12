@@ -6,15 +6,12 @@ using namespace std;
 
 class Toy : public Product
 {
-    public:
+public:
+    Toy(string name, int price, int age);
 
-    Toy(string name, int price, int age) : Product(name, price), age(age){}
+    int getAge();
+    void display() override;
 
-    int getAge()
-    {
-        return age;
-    }
-
-    private:
+private:
     int age;
 };
