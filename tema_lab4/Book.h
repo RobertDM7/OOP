@@ -8,34 +8,14 @@ using namespace std;
 
 class Book
 {
-    public:
-    Book(string bookName = "No name yet")
-    {
-        this -> bookName = bookName;
-    }
+public:
+    Book(string bookName = "No name yet");
 
-    void addReview(string reviewerName, string reviewtext)
-    {
-        Review review(reviewerName, reviewtext);
-        reviews.push_back(review);
-    }
+    void addReview(string reviewerName, string reviewtext);
+    string getBookName() const;
+    void showReviews();
 
-    string getBookName() const
-    {
-        return bookName;
-    }
-
-    void showReviews()
-    {
-        cout << "Reviews for: " << bookName << "\n";
-        for (const auto review : reviews)
-        {
-            cout << "Reviewer name: " << review.getreviewerName() << ", review: " << review.getreview() << "\n";
-        }
-    }
-
-    private:
-
+private:
     string bookName;
     vector<Review> reviews;
 };

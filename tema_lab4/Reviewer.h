@@ -11,27 +11,12 @@ using namespace std;
 
 class Reviewer
 {
-    public:
-    Reviewer(string reviewerName)
-    {
-        this -> reviewerName = reviewerName;
-    }
+public:
+    Reviewer(string reviewerName);
 
-    void addReview(string reviewtext, string bookName, Library &library)
-    {
-           
-        try {
-            Book& carte = library.getBook(bookName);
-            carte.addReview(reviewerName, reviewtext);
+    void addReview(string reviewtext, string bookName, Library &library);
 
-        } catch (const exception& e) {
-            Book carte2(bookName);
-            carte2.addReview(reviewerName, reviewtext);
-            library.addBook(carte2);
-        }
-    }
-
-    private:
+private:
     string reviewerName;
     vector<Review> reviews;
 };

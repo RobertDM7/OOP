@@ -9,25 +9,13 @@ using namespace std;
 
 class Review
 {
-    public:
+public:
+    Review(string reviewerName, string review);
 
-    Review(string reviewerName, string review)
-    {
-        this -> reviewerName = reviewerName;
-        this -> review = review;
-    }
+    string getreviewerName() const;
+    string getreview() const;
 
-    string getreviewerName() const
-    {
-        return reviewerName;
-    }
-
-    string getreview() const
-    {
-        return review;
-    }
-
-    private:
+private:
     string reviewerName;
     string review;
 };
